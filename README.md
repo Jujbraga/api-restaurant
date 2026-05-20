@@ -1,4 +1,4 @@
-# 🍽️ Restaurant API
+# 🍽️ Restaurant Management API
 
 A RESTful API for restaurant management built with Node.js.
 
