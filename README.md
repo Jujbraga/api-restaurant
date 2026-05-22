@@ -8,7 +8,7 @@ The API follows REST principles and focuses on clean architecture, scalability, 
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
 This API allows you to:
 
@@ -25,7 +25,7 @@ This API allows you to:
 
 ---
 
-# 📚 Learning Objectives
+## 📚 Learning Objectives
 
 During this project, the following backend development concepts were explored:
 
@@ -42,7 +42,7 @@ During this project, the following backend development concepts were explored:
 
 ---
 
-# 🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 * Node.js
 * JavaScript (ES6+)
@@ -51,7 +51,40 @@ During this project, the following backend development concepts were explored:
 
 ---
 
-# 📂 Project Structure
+## 🌀 Application Flow
+
+The diagram below shows the basic workflow of the restaurant application.
+
+```mermaid
+flowchart LR
+
+    %% Nodes
+    START((Start))
+    OPEN[Open table]
+    ORDER[Orders]
+    BILL[Close Bill]
+    CLOSE[Closes Table]
+    END((End))
+
+    %% Flow
+    START -->|Client arrives| OPEN
+    OPEN -->|Client make| ORDER
+    ORDER -->|Client| BILL
+    BILL -->|Restaurant| CLOSE
+    CLOSE --> END
+    END -.->|Return for a new customer| START
+
+    %% Styles
+    classDef process fill:#0d6efd,color:#fff,stroke:#0b5ed7,stroke-width:2px;
+    classDef terminal fill:#dbeafe,color:#000,stroke:#6c8ebf,stroke-width:2px;
+
+    class OPEN,ORDER,BILL,CLOSE process;
+    class START,END terminal;
+```
+
+---
+
+## 📂 Project Structure
 
 ```bash
 api-restaurant/
@@ -70,7 +103,7 @@ api-restaurant/
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
 Clone the repository:
 
@@ -104,35 +137,35 @@ npm start
 
 ---
 
-# 🔥 API Endpoints
+## 🔥 API Endpoints
 
-## Restaurants
+### Restaurants
 
-### Create Restaurant
+#### Create Restaurant
 
 ```http
 POST /restaurants
 ```
 
-### List Restaurants
+#### List Restaurants
 
 ```http
 GET /restaurants
 ```
 
-### Get Restaurant By ID
+#### Get Restaurant By ID
 
 ```http
 GET /restaurants/:id
 ```
 
-### Update Restaurant
+#### Update Restaurant
 
 ```http
 PUT /restaurants/:id
 ```
 
-### Delete Restaurant
+#### Delete Restaurant
 
 ```http
 DELETE /restaurants/:id
@@ -140,27 +173,27 @@ DELETE /restaurants/:id
 
 ---
 
-## Menu
+### Menu
 
-### Create Menu Item
+#### Create Menu Item
 
 ```http
 POST /menu
 ```
 
-### List Menu Items
+#### List Menu Items
 
 ```http
 GET /menu
 ```
 
-### Update Menu Item
+#### Update Menu Item
 
 ```http
 PUT /menu/:id
 ```
 
-### Delete Menu Item
+#### Delete Menu Item
 
 ```http
 DELETE /menu/:id
@@ -168,21 +201,21 @@ DELETE /menu/:id
 
 ---
 
-## Orders
+### Orders
 
-### Create Order
+#### Create Order
 
 ```http
 POST /orders
 ```
 
-### List Orders
+#### List Orders
 
 ```http
 GET /orders
 ```
 
-### Update Order Status
+#### Update Order Status
 
 ```http
 PATCH /orders/:id/status
@@ -190,7 +223,7 @@ PATCH /orders/:id/status
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!
 
@@ -198,6 +231,6 @@ Feel free to fork the project, open issues, and submit pull requests.
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
